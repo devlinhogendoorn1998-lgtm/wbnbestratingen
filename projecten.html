@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio | WBN Projecten</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="top-sectie">
+    <nav class="navbar">
+        <div class="nav-logo">
+            <img src="images/logowbn.png" alt="Logo WBN" class="logo-img">
+        </div>
+        <div class="logo"><h1>Wbn Bestratingen</h1></div>
+        <button class="menu-toggle" id="menu-btn" aria-label="Menu openen/sluiten">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </nav>
+    <ul class="nav-links" id="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="projecten.html">Projecten</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
+    <div class="banner-wrapper hero">
+        <img src="images/pfbanner.jpeg" alt="WBN Panorama" class="panorama-foto">
+        <div class="hero-content">
+            <p class="slogan">Bekijk onze recente projecten</p>
+        </div>
+    </div>
+</header>
+
+<main class="master-main">
+    <div class="content-wrapper">
+        <section class="intro-tekst">
+            <h2>Portfolio</h2>
+            <p>Bekijk hieronder een selectie van onze afgeronde projecten. Klik op een project om alle foto's te bekijken.</p>
+        </section>
+
+        <section class="portfolio-grid">
+    <div class="portfolio-item" onclick="openProject('project1')">
+        <div class="portfolio-thumb-link">
+            <img src="images/thumbnails/thumb1.jpeg" alt="Moderne oprit" />
+        </div>
+        <h3>Moderne oprit</h3>
+        <p>Klik om alle 10 foto's te bekijken.</p>
+    </div>
+
+    <div class="portfolio-item" onclick="openProject('project2')">
+        <div class="portfolio-thumb-link">
+            <img src="images/thumbnails/thumb2.jpg" alt="Sfeervolle tuin" />
+        </div>
+        <h3>Sfeervolle tuin</h3>
+        <p>Klik om alle 10 foto's te bekijken.</p>
+    </div>
+
+    <div class="portfolio-item" onclick="openProject('project3')">
+        <div class="portfolio-thumb-link">
+            <img src="images/thumbnails/thumb3.jpg" alt="Terras met overkapping" />
+        </div>
+        <h3>Terras met overkapping</h3>
+        <p>Klik om alle 10 foto's te bekijken.</p>
+    </div>
+
+    <div class="portfolio-item" onclick="openProject('project4')">
+        <div class="portfolio-thumb-link">
+            <img src="images/thumbnails/thumb4.jpg" alt="Gras & grind" />
+        </div>
+        <h3>Gras & grind</h3>
+        <p>Klik om alle 10 foto's te bekijken.</p>
+    </div>
+
+    <div class="portfolio-item" onclick="openProject('project5')">
+        <div class="portfolio-thumb-link">
+            <img src="images/thumbnails/thumb5.jpg" alt="Nieuw Project" />
+        </div>
+        <h3>Nieuw Project</h3>
+        <p>Klik om alle 10 foto's te bekijken.</p>
+    </div>
+</section>
+
+        <div id="projectModal" class="modal">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <div class="modal-content">
+                <div id="slider-container">
+                    </div>
+                <button class="prev" onclick="changeSlide(-1)">&#10094;</button>
+                <button class="next" onclick="changeSlide(1)">&#10095;</button>
+            </div>
+        </div>
+
+        <section class="cta-sectie">
+            <div class="voordelen-wrapper">
+                <span>✓ Vrijblijvend langskomen</span>
+                <span>✓ Duidelijke offerte vooraf</span>
+                <span>✓ Net en vakkundig werk</span>
+            </div>
+            <div class="contact-box">
+                <p>Heeft u interesse of wilt u meer informatie?</p>
+                <a href="#contact" class="btn-main">Stuur direct een bericht</a>
+            </div>
+        </section>
+    </div>
+</main>
+
+<a href="https://wa.me/31614504773" class="whatsapp-float" target="_blank" rel="noopener noreferrer">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" class="whatsapp-icon">
+</a>
+
+<script src="script.js"></script>
+</body>
+</html>
