@@ -38,19 +38,43 @@ const contactForm = document.getElementById('contact-form');
 if (contactForm) {
     contactForm.addEventListener('submit', function(event) {
         event.preventDefault();
+
+        const btn = document.querySelector('.btn-send');
         const statusMsg = document.getElementById('form-status');
-        if (statusMsg) {
-            statusMsg.innerText = "Bezig met verzenden...";
-            statusMsg.style.color = "orange";
+
+        if (btn) {
+            btn.innerText = 'Bezig met verzenden...';
+            btn.disabled = true;
         }
-        // Hier komt straks de emailjs.sendForm code
-        // Voor nu een simpele simulatie:
-        setTimeout(() => {
-            if (statusMsg) {
-                statusMsg.innerText = "Bedankt! Uw bericht is verzonden.";
-                statusMsg.style.color = "green";
-            }
-            contactForm.reset(); // Maakt het formulier leeg
-        }, 2000);
+        if (statusMsg) {
+            statusMsg.innerText = '';
+            statusMsg.style.color = '';
+        }
+
+        // Jouw specifieke ID's zijn hier ingevuld
+        const serviceID = 'service_zl8zyo5';
+        const templateID = 'template_fb6o107';
+
+        emailjs.sendForm(serviceID, templateID, this)
+            .then(function() {
+                if (statusMsg) {
+                    statusMsg.innerText = "Bedankt! Uw bericht is verzonden.";
+                    statusMsg.style.color = "#3be436";
+                }
+                if (btn) {
+                    btn.innerText = 'Bericht verzonden';
+                    btn.disabled = false;
+                }
+                contactForm.reset();
+            }, function(error) {
+                if (statusMsg) {
+                    statusMsg.innerText = "Fout: " + (error.text || JSON.stringify(error));
+                    statusMsg.style.color = "red";
+                }
+                if (btn) {
+                    btn.innerText = 'Opnieuw proberen';
+                    btn.disabled = false;
+                }
+            });
     });
 }
