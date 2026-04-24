@@ -51,7 +51,7 @@
 
     <div class="portfolio-item" onclick="openProject('project2')">
         <div class="portfolio-thumb-link">
-            <img src="images/thumbnails/thumb2.jpg" alt="Sfeervolle tuin" />
+            <img src="images/thumbnails/thumb2.jpeg" alt="Sfeervolle tuin" />
         </div>
         <h3>Sfeervolle tuin</h3>
         <p>Klik om alle 10 foto's te bekijken.</p>
@@ -59,7 +59,7 @@
 
     <div class="portfolio-item" onclick="openProject('project3')">
         <div class="portfolio-thumb-link">
-            <img src="images/thumbnails/thumb3.jpg" alt="Terras met overkapping" />
+            <img src="images/thumbnails/thumb3.jpeg" alt="Terras met overkapping" />
         </div>
         <h3>Terras met overkapping</h3>
         <p>Klik om alle 10 foto's te bekijken.</p>
@@ -67,7 +67,7 @@
 
     <div class="portfolio-item" onclick="openProject('project4')">
         <div class="portfolio-thumb-link">
-            <img src="images/thumbnails/thumb4.jpg" alt="Gras & grind" />
+            <img src="images/thumbnails/thumb4.jpeg" alt="Gras & grind" />
         </div>
         <h3>Gras & grind</h3>
         <p>Klik om alle 10 foto's te bekijken.</p>
@@ -75,22 +75,14 @@
 
     <div class="portfolio-item" onclick="openProject('project5')">
         <div class="portfolio-thumb-link">
-            <img src="images/thumbnails/thumb5.jpg" alt="Nieuw Project" />
+            <img src="images/thumbnails/thumb5.jpeg" alt="Nieuw Project" />
         </div>
         <h3>Nieuw Project</h3>
         <p>Klik om alle 10 foto's te bekijken.</p>
     </div>
 </section>
 
-        <div id="projectModal" class="modal">
-            <span class="close" onclick="closeModal()">&times;</span>
-            <div class="modal-content">
-                <div id="slider-container">
-                    </div>
-                <button class="prev" onclick="changeSlide(-1)">&#10094;</button>
-                <button class="next" onclick="changeSlide(1)">&#10095;</button>
-            </div>
-        </div>
+
 
         <section class="cta-sectie">
             <div class="voordelen-wrapper">
@@ -110,6 +102,16 @@
     <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" class="whatsapp-icon">
 </a>
 
-<script src="script.js"></script>
+    <!-- Project Modal als overlay, buiten main content -->
+    <div id="projectModal" class="modal">
+        <span class="close-btn" onclick="closeModal()">&times;</span>
+        <div class="modal-content">
+            <div id="slider-container" class="swipe-area"></div>
+            <button class="nav-btn prev" onclick="changeSlide(-1)">&#10094;</button>
+            <button class="nav-btn next" onclick="changeSlide(1)">&#10095;</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
 </body>
 </html>

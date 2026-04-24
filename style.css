@@ -720,3 +720,141 @@ main.master-main, main.info-sectie {
         padding: 32px 0 0 0;
     }
 }
+
+/* Section: // Cookie Banner Styling */
+.cookie-overlay {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    max-width: 500px;
+    background: #ffffff;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    border-radius: 10px;
+    padding: 20px;
+    z-index: 10000;
+    display: none; /* Standaard verborgen */
+}
+
+.cookie-content {
+    text-align: center;
+}
+
+.cookie-content p {
+    font-family: sans-serif;
+    color: #333;
+    margin-bottom: 15px;
+    font-size: 0.9rem;
+}
+
+.cookie-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.btn-cookie {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.accept {
+    background-color: #3be436; /* Jouw groene kleur */
+    color: white;
+}
+
+.decline {
+    background-color: #eee;
+    color: #666;
+}
+
+.btn-cookie:hover {
+    opacity: 0.8;
+}
+/* Section: // Hover effect voor de klikbare items */
+.portfolio-item {
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.portfolio-item:hover {
+    transform: scale(1.02);
+}
+
+/* Section: // Fullscreen Modal Layout */
+.modal {
+    display: none; 
+    position: fixed;
+    z-index: 9999; /* Zorgt dat hij boven ALLES staat */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.95); /* Donkere achtergrond */
+    touch-action: none; /* Voorkomt scrollen van de pagina tijdens swipen */
+}
+
+/* De X knop rechtsboven */
+.close-btn {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    color: white;
+    font-size: 50px;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 10001;
+    line-height: 1;
+}
+
+.modal-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+.swipe-area {
+    width: 100%;
+    max-width: 1000px;
+    display: flex;
+    justify-content: center;
+}
+
+.swipe-area img {
+    max-width: 95%;
+    max-height: 90vh;
+    object-fit: contain;
+    user-select: none;
+}
+
+/* Navigatie knoppen voor PC */
+.nav-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    border: none;
+    padding: 20px;
+    cursor: pointer;
+    font-size: 24px;
+    transition: 0.3s;
+}
+
+.nav-btn:hover { background: rgba(255, 255, 255, 0.3); }
+.prev { left: 10px; }
+.next { right: 10px; }
+
+/* Verberg navigatieknoppen op mobiel voor een schoner swipe-beeld */
+@media (max-width: 768px) {
+    .nav-btn { display: none; }
+    .close-btn { top: 10px; right: 20px; font-size: 40px; }
+}
+
